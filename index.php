@@ -24,11 +24,11 @@
 		<div class="busqueda">
 			<h2>Contactos</h2>
 			<div class="campo-busqueda">
-				<input type="search" name="buscar" placeholder="Buscar Contactos.....">
+				<input type="search" name="buscar" id="buscador" placeholder="Buscar Contactos.....">
 			</div>
 		</div>
 		<div class="contactos">
-			<h4><span class="numero">10</span> Contactos</h4>
+			<h4><span class="numero"></span> Contactos</h4>
 		</div>
 		<div class="tabla">
 			<table id="listado-contactos">

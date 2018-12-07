@@ -24,7 +24,20 @@ function obtenerContactos($sql, $conecta)
 	$resultado = $statement->fetchAll();
 	return $resultado;
 }
+function obtenerContacto($sql, $conecta)
+{
+	$statement = $conecta->prepare($sql);
+	$statement->execute();
+	$resultado = $statement->fetch(PDO::FETCH_ASSOC);
+	return $resultado;
+}
 function eliminarContacto($sql, $conecta)
+{
+	$statement = $conecta->prepare($sql);
+	$statement->execute();
+	return $statement;
+}
+function modificarContacto($sql, $conecta)
 {
 	$statement = $conecta->prepare($sql);
 	$statement->execute();

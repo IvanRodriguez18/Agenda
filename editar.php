@@ -1,8 +1,19 @@
-<?php include 'includes/header.php'; ?>
+<?php
+	include 'includes/funciones.php';
+	include 'includes/header.php';
+	$conecta = conexionBD();
+	$id = filter_var($_GET['id'], FILTER_VALIDATE_INT);
+	if (!$id) {
+		die();
+	}else{
+		$sql = "SELECT * FROM contactos WHERE id_contacto='$id'";
+		$resultado = obtenerContacto($sql, $conecta);
+	}
+?>
 <header class="cabecera">
 	<div class="titulo-app">
 		<div class="padre">
-			<a href="index.php" class="btn-enlace"> &laquo; Volver</a>
+			<a href="index.php" class="btn-enlace"> &laquo;Volver</a>
 			<h1>Editar Contacto</h1>
 		</div>
 	</div>
