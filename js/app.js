@@ -1,13 +1,15 @@
 const formularioContactos = document.querySelector('#registro'),
-	  listadoContactos = document.querySelector('#listado-contactos tbody')
+	  listadoContactos = document.querySelector('#listado-contactos tbody'),
 	  buscador = document.querySelector('#buscador');
 var texto, clase;
 eventosAll();
-function eventosAll() {
+function eventosAll() 
+{
 	// aqui van a ir todos los eventos del proyecto
 	formularioContactos.addEventListener('submit', leerFormulario);
 	// Evento para eliminar registros de la base de datos
-	if (listadoContactos) {
+	if (listadoContactos) 
+	{
 		listadoContactos.addEventListener('click', eliminarContacto);
 	}
 	// Evento para dar funcionalidad al campo de busqueda de contactos
@@ -16,7 +18,8 @@ function eventosAll() {
 	cantidadContactos();
 }
 // Funcion de leerFormulario
-function leerFormulario(event){
+function leerFormulario(event)
+{
 	event.preventDefault();
 	// leer valor de los campos de texto del formulario
 	var nombre = document.querySelector('#nombre').value,
@@ -29,7 +32,8 @@ function leerFormulario(event){
 			clase = 'error';
 			mostrarNotificacion(texto, clase);
 			// console.log(accion);
-		}else{
+		}else
+		{
 			const datosContacto = new FormData();
 			datosContacto.append('nombre', nombre);
 			datosContacto.append('empresa', empresa);
